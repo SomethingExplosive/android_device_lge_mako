@@ -44,8 +44,10 @@ PRODUCT_PACKAGES += \
 
 LOCAL_KERNEL := device/lge/mako-kernel/kernel
 
+# Copy prebuilt kernel and modules
 PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
+	$(LOCAL_KERNEL):kernel \
+	device/lge/mako/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
 
 PRODUCT_COPY_FILES += \
 	device/lge/mako/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
